@@ -1,0 +1,93 @@
+<!doctype html>
+<!--
+ ___   ___   __ _ | |_  ___    (_)  ___
+/ __| / _ \ / _` || __|/ __|   | | / _ \
+\__ \|  __/| (_| || |_ \__ \ _ | || (_) |
+|___/ \___| \__,_| \__||___/(_)|_| \___/
+
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <link rel="stylesheet" href="flaticon/flaticon.css">
+
+    <script src="lib/jquery.1.11.0.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/fontfaceobserver.2.0.9.standalone.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="font-seatsdesigner.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="chartDesigner.css" rel="stylesheet">
+    <link rel="stylesheet" href="gui.css" rel="stylesheet">
+    <link rel="stylesheet" href="DesignerApp.css" rel="stylesheet">
+
+    <script src="../../../../chart.js"></script>
+    <script>
+        let seatsioNoConflict = seatsio;
+    </script>
+
+    <script src="lib/less.1.7.0.min.js"></script>
+    <script type="module">
+        import { ChartScannerComponent, Point, Polygon} from '../chart-scanner/main.js';
+        window.ChartScannerComponent = ChartScannerComponent;
+        window.ChartScannerPoint = Point;
+        window.ChartScannerPolygon = Polygon;
+    </script>
+    <script src="chartDesigner.js"></script>
+    <script src="chartDesignerIframe.js"></script>
+    <script type="module">
+        window.loadEditor3d = async () => {
+            if (window.Editor3D) {
+                return
+            }
+
+            return await import('../chart-editor-3d/main.js').then(module => {
+                window.Editor3D = module.Editor3D
+            })
+        }
+    </script>
+
+</head>
+
+<body style="margin: 0; padding: 0;">
+
+<script src="errorHandling.js"></script>
+
+<div id="chart"></div>
+
+<div id="designerApp"></div>
+<div id="editor3d"></div>
+<div id="chartDesignerWrapper">
+    <form method="post" class="form-inline" id="chartForm">
+        <div id="alert">
+    <div class="message">
+        <span class="msg-content"></span>
+        <button id="ok-got-it-btn" class="btn btn-small btn-custom-transparent-whiteFg"><i class="fa fa-check"></i> &nbsp;<span class="translation-placeholder" data-placeholder="ok"></span></button>
+    </div>
+    <div class="dismiss-alert">
+        <i class="fa fa-close dismiss-alert"></i>
+    </div>
+</div>
+        <div class="chartdesigner svgContainer" id="drawing"></div>
+    </form>
+</div>
+
+
+<div id="renderingError">
+    <div>
+        <div class="message"></div>
+    </div>
+</div>
+
+<script>
+    $(function() {
+        initChartDesignerIframe('https://api-eu.seatsio.net', 'https://cdn-eu.seatsio.net', 'https://data.seatsio.net');
+    });
+</script>
+
+</body>
+</html>
