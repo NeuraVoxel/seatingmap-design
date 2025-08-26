@@ -59,3 +59,22 @@
   display: inline-block;
   width: 95%;
 }
+
+.rounded-rectangle {
+  border-radius: 8px;
+  padding: 8px 16px;
+  background-color: #9CB0B8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.rounded-rectangle:hover {
+  background-color: #6B8E9C;
+}
+
+.rounded-rectangle:active {
+  background-color: #4A6B7D;
+}

@@ -88076,7 +88076,7 @@ class DesignerApp extends React.Component {
                                 { className: 'group context-actions' },
                                 React.createElement(ContextActions, { selection: this.props.selection, uiState: this.props.uiState })
                             ),
-                            React.createElement('button', { className: 'btn btn-primary', onClick: (e) => {
+                            React.createElement('button', { className: 'rounded-rectangle', onClick: (e) => {
                               const json = seatsio.designer.toJson();
                               // Save JSON to local file
                               const blob = new Blob([JSON.stringify(json, null, 2)], { type: 'application/json' });
