@@ -101663,19 +101663,19 @@ class NavigationHUD extends React.Component {
         return React.createElement(
             'div',
             { className: `NavigationHUD ${this.state.dragging && 'dragging'} align-${this.props.align || 'left'}` },
-            React.createElement(
-                'div',
-                { className: 'ring' },
-                React.createElement(
-                    'div',
-                    { className: 'arrows' },
-                    React.createElement('div', { className: 'left icon-arrow-left', onClick: () => uiEvents.panLeft() }),
-                    React.createElement('div', { className: 'right icon-arrow-right', onClick: () => uiEvents.panRight() }),
-                    React.createElement('div', { className: 'up icon-arrow-up', onClick: () => uiEvents.panUp() }),
-                    React.createElement('div', { className: 'down icon-arrow-down', onClick: () => uiEvents.panDown() })
-                ),
-                React.createElement('div', { className: 'joystick', ref: e => this.joystickRef = e, onMouseDown: this.onMouseDown.bind(this) })
-            ),
+            // React.createElement(
+            //     'div',
+            //     { className: 'ring' },
+            //     React.createElement(
+            //         'div',
+            //         { className: 'arrows' },
+            //         React.createElement('div', { className: 'left icon-arrow-left', onClick: () => uiEvents.panLeft() }),
+            //         React.createElement('div', { className: 'right icon-arrow-right', onClick: () => uiEvents.panRight() }),
+            //         React.createElement('div', { className: 'up icon-arrow-up', onClick: () => uiEvents.panUp() }),
+            //         React.createElement('div', { className: 'down icon-arrow-down', onClick: () => uiEvents.panDown() })
+            //     ),
+            //     React.createElement('div', { className: 'joystick', ref: e => this.joystickRef = e, onMouseDown: this.onMouseDown.bind(this) })
+            // ),
             React.createElement(
                 'div',
                 { className: 'button-switcher' },
