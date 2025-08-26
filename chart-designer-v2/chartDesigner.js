@@ -98361,7 +98361,7 @@ Dialogs.FloatingDialogs.Preview = class Preview extends Dialogs.FloatingDialog {
     }
 
     renderPreview() {
-        this.chart = new seatsioNoConflict.SeatingChart({
+        this.chart = new seatingMapJuzai.SeatingChart({
             divId: 'chartPreview',
             workspaceKey: this.props.document.workspaceKey,
             chart: this.props.document.chartKey,

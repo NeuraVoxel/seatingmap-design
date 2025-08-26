@@ -1,38 +1,32 @@
 <!doctype html>
-<!--
- ___   ___   __ _ | |_  ___    (_)  ___
-/ __| / _ \ / _` || __|/ __|   | | / _ \
-\__ \|  __/| (_| || |_ \__ \ _ | || (_) |
-|___/ \___| \__,_| \__||___/(_)|_| \___/
-
--->
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-
-    <link rel="stylesheet" href="flaticon/flaticon.css">
 
     <script src="lib/jquery.1.11.0.min.js"></script>
     <script src="lib/bootstrap.min.js"></script>
     <script src="lib/fontfaceobserver.2.0.9.standalone.js"></script>
 
-    <link href="./css/Roboto.css" rel="stylesheet">
-    <link href="./css/family.css" rel="stylesheet">
-    <link rel="stylesheet" href="font-seatsdesigner.css" rel="stylesheet">
-    <link rel="stylesheet" href="bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="chartDesigner.css" rel="stylesheet">
-    <link rel="stylesheet" href="gui.css" rel="stylesheet">
-    <link rel="stylesheet" href="DesignerApp.css" rel="stylesheet">
+    <link rel="stylesheet" href="flaticon/flaticon.css">
+    <link rel="stylesheet" href="./css/Roboto.css">
+    <link rel="stylesheet" href="./css/family.css">
+    <link rel="stylesheet" href="font-seatsdesigner.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="chartDesigner.css">
+    <link rel="stylesheet" href="gui.css">
+    <link rel="stylesheet" href="DesignerApp.css">
 
     <script src="./chart.js"></script>
+
     <script>
-        let seatsioNoConflict = seatsio;
+        let seatingMapJuzai = seatsio;
     </script>
 
     <script src="lib/less.1.7.0.min.js"></script>
     <script type="module">
-        import { ChartScannerComponent, Point, Polygon} from './js/chart-scanner/main.js';
+        import { ChartScannerComponent, Point, Polygon } from './js/chart-scanner/main.js';
         window.ChartScannerComponent = ChartScannerComponent;
         window.ChartScannerPoint = Point;
         window.ChartScannerPolygon = Polygon;
@@ -55,39 +49,42 @@
 
 <body style="margin: 0; padding: 0;">
 
-<script src="errorHandling.js"></script>
+    <script src="errorHandling.js"></script>
 
-<div id="chart"></div>
+    <div id="chart"></div>
 
-<div id="designerApp"></div>
-<div id="editor3d"></div>
-<div id="chartDesignerWrapper">
-    <form method="post" class="form-inline" id="chartForm">
-        <div id="alert">
-    <div class="message">
-        <span class="msg-content"></span>
-        <button id="ok-got-it-btn" class="btn btn-small btn-custom-transparent-whiteFg"><i class="fa fa-check"></i> &nbsp;<span class="translation-placeholder" data-placeholder="ok"></span></button>
+    <div id="designerApp"></div>
+    <div id="editor3d"></div>
+    <div id="chartDesignerWrapper">
+        <form method="post" class="form-inline" id="chartForm">
+            <div id="alert">
+                <div class="message">
+                    <span class="msg-content"></span>
+                    <button id="ok-got-it-btn" class="btn btn-small btn-custom-transparent-whiteFg"><i
+                            class="fa fa-check"></i> &nbsp;<span class="translation-placeholder"
+                            data-placeholder="ok"></span></button>
+                </div>
+                <div class="dismiss-alert">
+                    <i class="fa fa-close dismiss-alert"></i>
+                </div>
+            </div>
+            <div class="chartdesigner svgContainer" id="drawing"></div>
+        </form>
     </div>
-    <div class="dismiss-alert">
-        <i class="fa fa-close dismiss-alert"></i>
+
+
+    <div id="renderingError">
+        <div>
+            <div class="message"></div>
+        </div>
     </div>
-</div>
-        <div class="chartdesigner svgContainer" id="drawing"></div>
-    </form>
-</div>
 
-
-<div id="renderingError">
-    <div>
-        <div class="message"></div>
-    </div>
-</div>
-
-<script>
-    $(function() {
-        initChartDesignerIframe('https://api-eu.seatsio.net', 'https://cdn-eu.seatsio.net', 'https://data.seatsio.net');
-    });
-</script>
+    <script>
+        $(function () {
+            initChartDesignerIframe('https://api-eu.seatsio.net', 'https://cdn-eu.seatsio.net', 'https://data.seatsio.net');
+        });
+    </script>
 
 </body>
+
 </html>
