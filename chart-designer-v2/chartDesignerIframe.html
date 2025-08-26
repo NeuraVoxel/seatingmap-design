@@ -25,14 +25,14 @@
     <link rel="stylesheet" href="gui.css" rel="stylesheet">
     <link rel="stylesheet" href="DesignerApp.css" rel="stylesheet">
 
-    <script src="../../../../chart.js"></script>
+    <script src="./chart.js"></script>
     <script>
         let seatsioNoConflict = seatsio;
     </script>
 
     <script src="lib/less.1.7.0.min.js"></script>
     <script type="module">
-        import { ChartScannerComponent, Point, Polygon} from '../chart-scanner/main.js';
+        import { ChartScannerComponent, Point, Polygon} from './js/chart-scanner/main.js';
         window.ChartScannerComponent = ChartScannerComponent;
         window.ChartScannerPoint = Point;
         window.ChartScannerPolygon = Polygon;

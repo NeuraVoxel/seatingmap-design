@@ -8,19 +8,19 @@ if (typeof (seatsio) == 'undefined') {
     (function () {
         var seatsio = {}
 
-        var cdnUrl = 'https://cdn-eu.seatsio.net'
+        var cdnUrl = 'http://localhost:8080'
         var dataCollectorUrl = 'https://data.seatsio.net'
         seatsio.environment = 'PROD'
 
-        if (seatsio.environment !== 'DEV' && seatsio.environment !== 'REVIEW') {
-            if (wasScriptLoadedFromDomains('chart.js', ['seats.io'])) {
-                console.warn('chart.js was loaded from the seats.io domain. Prefer loading it from ' + cdnUrl + '/chart.js instead. Read more at https://bit.ly/2KOPkDO.')
-            } else if (!wasScriptLoadedFromDomains('chart.js', ['seatsio.net'])) {
-                logEventInDatacollector('CHART_RENDERING_ERROR', { error: 'CHARTJS_LOADED_FROM_INVALID_DOMAIN' }, dataCollectorUrl)
-                console.error('chart.js was not loaded from the seatsio.net (or seats.io) domain. Please load it from ' + cdnUrl + '/chart.js')
-                return
-            }
-        }
+        // if (seatsio.environment !== 'DEV' && seatsio.environment !== 'REVIEW') {
+        //     if (wasScriptLoadedFromDomains('chart.js', ['seats.io'])) {
+        //         console.warn('chart.js was loaded from the seats.io domain. Prefer loading it from ' + cdnUrl + '/chart.js instead. Read more at https://bit.ly/2KOPkDO.')
+        //     } else if (!wasScriptLoadedFromDomains('chart.js', ['seatsio.net'])) {
+        //         logEventInDatacollector('CHART_RENDERING_ERROR', { error: 'CHARTJS_LOADED_FROM_INVALID_DOMAIN' }, dataCollectorUrl)
+        //         console.error('chart.js was not loaded from the seatsio.net (or seats.io) domain. Please load it from ' + cdnUrl + '/chart.js')
+        //         return
+        //     }
+        // }
 
         seatsio.onLoad = function (f) {
             f()
@@ -30,8 +30,8 @@ if (typeof (seatsio) == 'undefined') {
 
         seatsio.apiUrl = 'https://api-eu.seatsio.net'
         seatsio.CDNUrl = cdnUrl
-        seatsio.publicApiUrl = 'https://cdn-eu.seatsio.net'
-        seatsio.CDNStaticFilesUrl = 'https://cdn-eu.seatsio.net/static/version/seatsio-ui-prod-00385-zmb'
+        seatsio.publicApiUrl = 'http://localhost:8080'
+        seatsio.CDNStaticFilesUrl = 'http://localhost:8080/static/version/seatsio-ui-prod-00385-zmb'
         seatsio.dataCollectorUrl = dataCollectorUrl
         seatsio.ablySubscribeKey = 'hnsCTA.N9m7fg:y3JI9JQ1krTED-b9'
         seatsio.messagingUrl = 'wss://messaging-eu.seatsio.net'
@@ -441,7 +441,7 @@ seatsio.Embeddable.prototype.createLoadingScreen = function () {
 
 seatsio.Embeddable.prototype.createSpinnerStylesheet = function (container) {
     const link = document.createElement('link')
-    link.href = seatsio.CDNStaticFilesUrl + '/chart-js/loading.css'
+    link.href = seatsio.CDNStaticFilesUrl + './css/loading.css'
     link.type = 'text/css'
     link.rel = 'stylesheet'
     container.appendChild(link)
