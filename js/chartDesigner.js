@@ -97028,6 +97028,7 @@ class DesignerApp extends React.Component {
                                         onClick: () => this.toggle3d()
                                     })
                                 ),
+// custom-topbar
                                 React.createElement(
                                     'div',
                                     { className: 'group designer' },
@@ -105367,15 +105368,15 @@ class ToolPicker extends React.Component {
         };this.definitions = {
             'select-cursor': ['selectCursor', 'select-cursor', 'toolSelectCursor'],
             'select-seats': ['selectSeats', 'select-seats', 'toolSelectSeats'],
-            'select-brush': ['selectBrush', 'select-brush', 'toolSelectBrush'],
-            'select-sameType': ['selectSameType', 'select-sameType', 'toolSelectSameType'],
-            'node': [seatsio.Features.Type.NODES, 'node', 'toolNode'],
+            // 'select-brush': ['selectBrush', 'select-brush', 'toolSelectBrush'],
+            // 'select-sameType': ['selectSameType', 'select-sameType', 'toolSelectSameType'],
+            // 'node': [seatsio.Features.Type.NODES, 'node', 'toolNode'],
             'row-single': [seatsio.Features.Type.ROWS, 'row-single', 'toolRowSingle'],
-            'row-segmented': [seatsio.Features.Type.ROWS, 'row-segmented', 'toolRowSegmented'],
+            // 'row-segmented': [seatsio.Features.Type.ROWS, 'row-segmented', 'toolRowSegmented'],
             'row-multiple': [seatsio.Features.Type.ROWS, 'row-multiple', 'toolRowMultiple'],
             'section-polygon': [seatsio.Features.Type.SECTIONS, 'section-polygon', 'toolSection'],
             'section-rectangle': [seatsio.Features.Type.SECTIONS, 'section-rectangle', 'toolSection'],
-            'booth': [seatsio.Features.Type.BOOTHS, 'booth', 'toolBooth'],
+            // 'booth': [seatsio.Features.Type.BOOTHS, 'booth', 'toolBooth'],
             'ga-rectangle': [seatsio.Features.Type.AREAS, 'ga-rectangle', 'toolGaRectangle'],
             'ga-ellipse': [seatsio.Features.Type.AREAS, 'ga-ellipse', 'toolGaEllipse'],
             'ga-polygon': [seatsio.Features.Type.AREAS, 'ga-polygon', 'toolGaPolygon'],
@@ -105383,12 +105384,12 @@ class ToolPicker extends React.Component {
             'shape-ellipse': [seatsio.Features.Type.SHAPES, 'shape-ellipse', 'toolShapeEllipse'],
             'shape-polygon': [seatsio.Features.Type.SHAPES, 'shape-polygon', 'toolShapePolygon'],
             'line': [seatsio.Features.Type.SHAPES, 'line', 'toolLine'],
-            'table-round': [seatsio.Features.Type.TABLES, 'table-round', 'toolTableRound'],
-            'table-rectangle': [seatsio.Features.Type.TABLES, 'table-rectangle', 'toolTableRectangle'],
+            // 'table-round': [seatsio.Features.Type.TABLES, 'table-round', 'toolTableRound'],
+            // 'table-rectangle': [seatsio.Features.Type.TABLES, 'table-rectangle', 'toolTableRectangle'],
             'text': [seatsio.Features.Type.TEXTS, 'text', 'toolText'],
-            'image': [seatsio.Features.Type.IMAGES, 'image', 'toolImageObject'],
-            'focalpoint': [seatsio.Features.Type.FOCAL_POINT, 'focalpoint', 'toolFocalPoint'],
-            'icon': [seatsio.Features.Type.ICONS, 'icon', 'toolIcon'],
+            // 'image': [seatsio.Features.Type.IMAGES, 'image', 'toolImageObject'],
+            // 'focalpoint': [seatsio.Features.Type.FOCAL_POINT, 'focalpoint', 'toolFocalPoint'],
+            // 'icon': [seatsio.Features.Type.ICONS, 'icon', 'toolIcon'],
             'hand': [seatsio.Features.Type.HAND, 'hand', 'toolHand']
         };
 

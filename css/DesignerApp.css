@@ -786,6 +786,7 @@
   border-radius: 5px;
   text-align: center;
   font-size: 22px;
+  /* display: none; */
 }
 #designerApp .Button.preset-tool > .tooltip {
   display: flex;

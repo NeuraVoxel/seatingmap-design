@@ -37,15 +37,15 @@
     <script src="./js/chartDesignerIframe.js"></script>
 
     <script type="module">
-        window.loadEditor3d = async () => {
-            if (window.Editor3D) {
-                return
-            }
+        // window.loadEditor3d = async () => {
+        //     if (window.Editor3D) {
+        //         return
+        //     }
 
-            return await import('../chart-editor-3d/main.js').then(module => {
-                window.Editor3D = module.Editor3D
-            })
-        }
+        //     return await import('../chart-editor-3d/main.js').then(module => {
+        //         window.Editor3D = module.Editor3D
+        //     })
+        // }
     </script>
 
 </head>
@@ -55,7 +55,6 @@
     <script src="./js/errorHandling.js"></script>
 
     <div id="chart"></div>
-
     <div id="designerApp"></div>
     <div id="editor3d"></div>
     <div id="chartDesignerWrapper">
