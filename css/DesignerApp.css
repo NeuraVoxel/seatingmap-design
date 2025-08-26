@@ -1113,7 +1113,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: url("designer/row-label-position.svg") no-repeat center center;
+  background: url("../assets/designer/row-label-position.svg") no-repeat center center;
   background-size: 58px 11px;
 }
 #designerApp .button-row-toggler .Button {
@@ -3240,7 +3240,7 @@
   height: 60px;
   border-radius: 60px;
   margin-bottom: 10px;
-  background: url("designer/navigation-hud-ring.svg") no-repeat center center;
+  background: url("../assets/designer/navigation-hud-ring.svg") no-repeat center center;
   background-size: cover;
   box-shadow: 0 0 1px hsla(0, 0%, 0%, 0.1), 0 1px 2px hsla(0, 0%, 0%, 0.12);
 }
@@ -6624,28 +6624,28 @@ body::-webkit-scrollbar {
   cursor: inherit;
 }
 #chartDesignerWrapper .chartdesigner.svgContainer > svg.custom-cursor.cursor-precision-drawing {
-  cursor: url('cursors/precision-drawing.png') 10 10, crosshair;
-  cursor: -webkit-image-set(url('cursors/precision-drawing.png') 1x, url('cursors/precision-drawing@2x.png') 2x) 10 10, crosshair;
+  cursor: url('../assets/cursors/precision-drawing.png') 10 10, crosshair;
+  cursor: -webkit-image-set(url('../assets/cursors/precision-drawing.png') 1x, url('../assets/cursors/precision-drawing@2x.png') 2x) 10 10, crosshair;
 }
 #chartDesignerWrapper .chartdesigner.svgContainer > svg.custom-cursor.cursor-seat-selection {
-  cursor: url('cursors/seat-selection.png') 10 10, crosshair;
-  cursor: -webkit-image-set(url('cursors/seat-selection.png') 1x, url('cursors/seat-selection@2x.png') 2x) 10 10, crosshair;
+  cursor: url('../assets/cursors/seat-selection.png') 10 10, crosshair;
+  cursor: -webkit-image-set(url('../assets/cursors/seat-selection.png') 1x, url('../assets/cursors/seat-selection@2x.png') 2x) 10 10, crosshair;
 }
 #chartDesignerWrapper .chartdesigner.svgContainer > svg.custom-cursor.cursor-node-on {
-  cursor: url('cursors/node-on.png') 2 2, pointer;
-  cursor: -webkit-image-set(url('cursors/node-on.png') 1x, url('cursors/node-on@2x.png') 2x) 2 2, pointer;
+  cursor: url('../assets/cursors/node-on.png') 2 2, pointer;
+  cursor: -webkit-image-set(url('../assets/cursors/node-on.png') 1x, url('../assets/cursors/node-on@2x.png') 2x) 2 2, pointer;
 }
 #chartDesignerWrapper .chartdesigner.svgContainer > svg.custom-cursor.cursor-node-off {
-  cursor: url('cursors/node-off.png') 2 2, pointer;
-  cursor: -webkit-image-set(url('cursors/node-off.png') 1x, url('cursors/node-off@2x.png') 2x) 2 2, pointer;
+  cursor: url('../assets/cursors/node-off.png') 2 2, pointer;
+  cursor: -webkit-image-set(url('../assets/cursors/node-off.png') 1x, url('../assets/cursors/node-off@2x.png') 2x) 2 2, pointer;
 }
 #chartDesignerWrapper .chartdesigner.svgContainer > svg.custom-cursor.cursor-we-rotate {
-  cursor: url('cursors/we-rotate.png') 10 10, pointer;
-  cursor: -webkit-image-set(url('cursors/we-rotate.png') 1x, url('cursors/we-rotate@2x.png') 2x) 10 10, pointer;
+  cursor: url('../assets/cursors/we-rotate.png') 10 10, pointer;
+  cursor: -webkit-image-set(url('../assets/cursors/we-rotate.png') 1x, url('../assets/cursors/we-rotate@2x.png') 2x) 10 10, pointer;
 }
 #chartDesignerWrapper .chartdesigner.svgContainer > svg.custom-cursor.cursor-brush {
-  cursor: url('cursors/brush.png') 7 17, pointer;
-  cursor: -webkit-image-set(url('cursors/brush.png') 1x, url('cursors/brush@2x.png') 2x) 7 17, pointer;
+  cursor: url('../assets/cursors/brush.png') 7 17, pointer;
+  cursor: -webkit-image-set(url('../assets/cursors/brush.png') 1x, url('../assets/cursors/brush@2x.png') 2x) 7 17, pointer;
 }
 #designerApp {
   overflow: hidden;

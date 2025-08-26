@@ -83670,7 +83670,7 @@ seatsio.Saver.prototype.createDeflater = function () {
     }
 
     var me = this
-    var deflater = new Worker('deflater/deflater.js')
+    var deflater = new Worker('./js/deflater/deflater.js')
     deflater.onmessage = function (e) {
       console.log(e.data);
         // me.chartDesigner.v2Client
