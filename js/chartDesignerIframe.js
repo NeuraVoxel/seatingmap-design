@@ -53,6 +53,9 @@ function renderChart(
     parsedConfig.isWebapp,
     parsedConfig.enable3d
   );
+  
+  
+
   chartDesigner
     .render();
     // .then(chartRendered)
