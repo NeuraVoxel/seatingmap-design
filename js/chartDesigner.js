@@ -59604,7 +59604,7 @@ seatsio.ChartDesigner.prototype.render = function () {
     //     .then(this.applyWorkspaceSettings.bind(this))
     //     .then(this.waitForSeatsFontLoaded.bind(this))
     //     .then(this.retrieveChart.bind(this))
-    return this.retrieveChart();
+  return this.retrieveChart();
 }
 
 seatsio.ChartDesigner.prototype.applyWorkspaceSettings = function () {
@@ -74669,11 +74669,11 @@ seatsio.Saver.prototype.createDeflater = function () {
 }
 
 seatsio.Saver.prototype.save = function (drawing) {
-    // if (this.chartDesigner.isReadOnly()) {
-    //     this.chartDesigner.uiEvents.saveRejected()
-    //     return
-    // }
-    console.log(drawing);
+    if (this.chartDesigner.isReadOnly()) {
+        this.chartDesigner.uiEvents.saveRejected()
+        return
+    }
+    // console.log(drawing);
     this.showSavingFeedback()
     this.deferred = $.Deferred()
     this.deflater.postMessage(drawing)
