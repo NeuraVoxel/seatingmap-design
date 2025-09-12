@@ -61778,20 +61778,20 @@ seatsio.Language.zh = {
     'fill-color': 'Fill color',
     'text-color': 'Text color',
     'children-count': '%{smart_count} child |||| %{smart_count} children',
-    'no-duplicate-objects': 'No duplicate objects',
-    'all-objects-labeled': 'All objects are labeled',
-    'all-objects-categorized': 'All objects are categorized',
+    'no-duplicate-objects': '无重复对象',
+    'all-objects-labeled': '所有对象都有标签',
+    'all-objects-categorized': '所有对象都已分类',
     'sections-scaling': 'Sections scaling',
     'edit-contents': 'Edit contents',
     'capacity': 'Capacity',
-    'places': 'place |||| places',
+    'places': 'place |||| 个位置',
     'no-capacity': 'No capacity',
     'entrance': 'Entrance',
     'category': 'Category',
-    'categories': 'Categories',
-    'n-categories': 'category |||| categories',
+    'categories': '类别',
+    'n-categories': 'category |||| 个类别',
     'categories-info-description-1': 'Categories can have pricing assigned when rendering the chart for a specific event, thus defining the pricing for objects assigned to each category.',
-    'multiple-object-types-per-category': 'categories on multiple object types',
+    'multiple-object-types-per-category': '多个对象类型上的类别',
     'unique-object-types-per-category': 'One category per object type',
     'object-types-per-category': 'Object types per category',
     'object-types-per-category-invalid': 'Some categories have been applied to more than one type of object.',
@@ -61861,7 +61861,7 @@ seatsio.Language.zh = {
     'object-label': '%{object} label', // object: row, seat, section, ...
     'object-labeling': '%{object} labeling', // object: row, booth, section, ...
     'tool-tool': '%{tool}', // object: select, row, focal point, rectangular area, ...
-    'chart-chart': '%{chart} chart',
+    'chart-chart': '%{chart}',
     'section-section': '%{section} section',
     'unlabeled-object': 'Unlabeled %{object}',
     'find-the-right-scale': 'Find the right scale',
@@ -61952,7 +61952,7 @@ seatsio.Language.zh = {
     'copy': 'Copy',
     'paste': 'Paste',
     'no-focal-point-set': 'No focal point set',
-    'focal-point-set': 'Focal point is set',
+    'focal-point-set': '焦点已设置',
     'displayObjectType': 'Displayed type',
     'couch': 'Couch',
     'none': 'None',
@@ -62001,8 +62001,8 @@ seatsio.Language.zh = {
     'stage-view-description': 'Best for theatres that have the stage drawn at the bottom side.',
     'isometric-view': 'View from above',
     'isometric-view-description': 'Least obstructed view for theatres, stadiums or other venues drawn from any side.',
-    'keys': 'Keys',
-    'manage': 'Manage',
+    'keys': '键值',
+    'manage': '管理',
     'no-category': 'No category assigned',
     'block-style': 'Block style',
     'published-labels-disabled': 'Published labels cannot be edited. You may still edit the Displayed label.',
@@ -97412,15 +97412,15 @@ Inspector.GUI.StatusInfo = class StatusInfo extends React.PureComponent {
             return React.createElement(
                 React.Fragment,
                 null,
-                React.createElement(
-                    'span',
-                    { className: 'value' },
-                    valueString
-                ),
+                // React.createElement(
+                //     'span',
+                //     { className: 'value' },
+                //     valueString
+                // ),
                 React.createElement(
                     'span',
                     { className: 'caption' },
-                    `${this.props.unit ? this.props.unit + ' ' : ''}${_.lowerFirst(this.props.caption)}`
+                    `${this.props.unit ? this.props.unit + ' ' : ''}${_.lowerFirst(this.props.caption)} (${valueString}) `
                 )
             );
         }
