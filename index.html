@@ -31,6 +31,24 @@
         window.ChartScannerComponent = ChartScannerComponent;
         window.ChartScannerPoint = Point;
         window.ChartScannerPolygon = Polygon;
+
+    </script>
+
+    <script >
+        document.addEventListener('DOMContentLoaded', () => {
+            // 解析 URL 中的查询参数
+            const searchParams = new URLSearchParams(window.location.search);
+            
+            // 获取参数并显示在页面上
+            const id = searchParams.get('id') || '未提供';
+            const name = searchParams.get('name') || '未提供';
+            const token = searchParams.get('token') || '未提供';
+            
+            // 输出所有参数到控制台
+            searchParams.forEach((value, key) => {
+                console.log(`${key}: ${value}`);
+            });
+        });
     </script>
 
     <script src="./js/chartDesigner.js"></script>
@@ -47,6 +65,7 @@
         //     })
         // }
     </script>
+
 
 </head>
 
