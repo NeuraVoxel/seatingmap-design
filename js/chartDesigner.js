@@ -59631,8 +59631,11 @@ seatsio.ChartDesigner.prototype.clipboardUpdated = function (clipboard) {
 seatsio.ChartDesigner.prototype.retrieveChart = function () {
     var me = this;
 
-    const apiBaseUrl = "https://apidev.juzai.cn/jz-api/jz/seatingMap";
-const id = "222"; // 动态设置 ID
+    // 测试 API 接口：通过 ID 获取座位图信息
+
+// 接口地址
+const apiBaseUrl = "https://apidev.juzai.cn/jz-api/jz/seatingMap";
+const id = window.id || 1; // 动态设置 ID
 const apiUrl = `${apiBaseUrl}/${id}`;
 
 // 请求头
@@ -59640,7 +59643,7 @@ const headers = {
     "accept": "application/json",
     "X-Tenant-ID": "{{tenant}}",
     "token": "{{token}}",
-    "Authorization3": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6ImJkMjE3ODU3LThmODItNDhhOS1iZjAxLTQ0MDE4MzY4YmI5ZCJ9.8llQmhTq0qxaO0bGJt7408Z5YlvZSxGoB_MvfziWCoCdWhAFVuxKrjcWvNjWktWuSDWhaUg9M4ojwEXYEbiTqQ"
+     "Authorization": window.token || "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6ImNiYjYyNDVjLTRiMjMtNGJlYi04M2RmLWI1OTExZGM1NDYyNCJ9.tK7MLEl7ryIuaJxGj6pqY-NGMkhocrGw-QwUFKKlwj5YWd-kc8_IcYMENDr3GeHdT2AQkzAIY4F8sgJjfGxQ8g"
 };
 
 // 发起 GET 请求
@@ -59653,20 +59656,21 @@ fetch(apiUrl, { headers })
     })
     .then(data => {
         console.log("API 响应数据:", data);
+        const json = JSON.parse(data.data.jsonData);
+        me.renderDrawing(json);
     })
     .catch(error => {
         console.error("请求失败:", error);
     });
    
-
-    // mock 
-    fetch('assets/json/rawdata.json')
-    .then(response => response.json())
-    .then(data => {
-      // this.loadDrawing(data);
-      me.renderDrawing(data);
-    })
-    .catch(error => console.error('Error loading rawdata.json:', error));
+    // // mock 
+    // fetch('assets/json/rawdata.json')
+    // .then(response => response.json())
+    // .then(data => {
+    //   // this.loadDrawing(data);
+    //   me.renderDrawing(data);
+    // })
+    // .catch(error => console.error('Error loading rawdata.json:', error));
     
     return;
 
@@ -88634,15 +88638,15 @@ class DesignerApp extends React.Component {
                             React.createElement('button', { className: 'rounded-rectangle', onClick: (e) => {
                               const json = seatsio.designer.toJson();
                               // Save JSON to local file
-                              const blob = new Blob([JSON.stringify(json, null, 2)], { type: 'application/json' });
-                              const url = URL.createObjectURL(blob);
-                              const a = document.createElement('a');
-                              a.href = url;
-                              a.download = 'seating-map-design.json';
-                              document.body.appendChild(a);
-                              a.click();
-                              document.body.removeChild(a);
-                              URL.revokeObjectURL(url);
+                              // const blob = new Blob([JSON.stringify(json, null, 2)], { type: 'application/json' });
+                              // const url = URL.createObjectURL(blob);
+                              // const a = document.createElement('a');
+                              // a.href = url;
+                              // a.download = 'seating-map-design.json';
+                              // document.body.appendChild(a);
+                              // a.click();
+                              // document.body.removeChild(a);
+                              // URL.revokeObjectURL(url);
 
                               // 测试 API 接口：更新座位图信息
 
@@ -88654,26 +88658,26 @@ const headers = {
     "accept": "application/json",
     "X-Tenant-ID": "{{tenant}}",
     "token": "{{token}}",
-    "Authorization3": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6ImJkMjE3ODU3LThmODItNDhhOS1iZjAxLTQ0MDE4MzY4YmI5ZCJ9.8llQmhTq0qxaO0bGJt7408Z5YlvZSxGoB_MvfziWCoCdWhAFVuxKrjcWvNjWktWuSDWhaUg9M4ojwEXYEbiTqQ",
+    "Authorization": window.token || "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6ImNiYjYyNDVjLTRiMjMtNGJlYi04M2RmLWI1OTExZGM1NDYyNCJ9.tK7MLEl7ryIuaJxGj6pqY-NGMkhocrGw-QwUFKKlwj5YWd-kc8_IcYMENDr3GeHdT2AQkzAIY4F8sgJjfGxQ8g",
     "Content-Type": "application/json"
 };
 
 // 请求体
-const requestBody = {
-    "createBy": "string",
-    "createTime": "string",
-    "updateBy": "string",
-    "updateTime": "string",
-    "remark": "string",
-    "params": {
-        "key": {}
-    },
-    "id": 0,
-    "title": "string",
-    "jsonData": "string",
-    "totalSeats": 0,
-    "totalRows": 0,
-    "totalAreas": 0
+const requestBody ={
+  "createBy": 'admin',
+  "createTime": "2025-10-15 00:00:00",
+  "updateBy": "admin",
+  "updateTime": "2025-10-15 00:01:00",
+  "remark": "",
+  "params": {
+    "key": {}
+  },
+  "id": window.id || 1,
+  "title": "测试座位图",
+  "jsonData": JSON.stringify(json),
+  "totalSeats": 0,
+  "totalRows": 0,
+  "totalAreas": 0
 };
 
 // 发起 PUT 请求

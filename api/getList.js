@@ -8,7 +8,7 @@ const headers = {
     "accept": "application/json",
     "X-Tenant-ID": "{{tenant}}",
     "token": "{{token}}",
-    "Authorization3": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6ImJkMjE3ODU3LThmODItNDhhOS1iZjAxLTQ0MDE4MzY4YmI5ZCJ9.8llQmhTq0qxaO0bGJt7408Z5YlvZSxGoB_MvfziWCoCdWhAFVuxKrjcWvNjWktWuSDWhaUg9M4ojwEXYEbiTqQ"
+    "Authorization": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6ImNiYjYyNDVjLTRiMjMtNGJlYi04M2RmLWI1OTExZGM1NDYyNCJ9.tK7MLEl7ryIuaJxGj6pqY-NGMkhocrGw-QwUFKKlwj5YWd-kc8_IcYMENDr3GeHdT2AQkzAIY4F8sgJjfGxQ8g"
 };
 
 // 发起 GET 请求
