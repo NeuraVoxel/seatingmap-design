@@ -59658,6 +59658,10 @@ fetch(apiUrl, { headers })
     .then(data => {
         console.log("API 响应数据:", data);
         const json = JSON.parse(data.data.jsonData);
+        if(!data.data.id) {
+          alert('座位图加载失败，请稍后重试');
+          return;
+        }
         json.name = name;
         me.renderDrawing(json);
     })
