@@ -88677,9 +88677,9 @@ const requestBody ={
   "id": window.id || 1,
   "title": window.name || "测试座位图",
   "jsonData": JSON.stringify(json),
-  "totalSeats": 0,
-  "totalRows": 0,
-  "totalAreas": 0
+  "totalSeats": seatsio.designer.globalStats?.totalPeopleCapacity || 0,
+  "totalRows": seatsio.designer.globalStats?.capacityByObjectType.row || 0,
+  "totalAreas": seatsio.designer.globalStats?.capacityByObjectType.generalAdmission || 0
 };
 
 // 发起 PUT 请求
