@@ -88675,7 +88675,7 @@ const requestBody ={
     "key": {}
   },
   "id": window.id || 1,
-  "title": "测试座位图",
+  "title": window.name || "测试座位图",
   "jsonData": JSON.stringify(json),
   "totalSeats": 0,
   "totalRows": 0,
