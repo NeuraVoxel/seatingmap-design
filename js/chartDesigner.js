@@ -59637,6 +59637,7 @@ seatsio.ChartDesigner.prototype.retrieveChart = function () {
 const apiBaseUrl = "https://apidev.juzai.cn/jz-api/jz/seatingMap";
 const id = window.id || 1; // 动态设置 ID
 const apiUrl = `${apiBaseUrl}/${id}`;
+const name = window.name || '未命名';
 
 // 请求头
 const headers = {
@@ -59657,6 +59658,7 @@ fetch(apiUrl, { headers })
     .then(data => {
         console.log("API 响应数据:", data);
         const json = JSON.parse(data.data.jsonData);
+        json.name = name;
         me.renderDrawing(json);
     })
     .catch(error => {
